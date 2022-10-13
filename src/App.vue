@@ -1,16 +1,32 @@
 <template>
   <div id="app">
-    <div @click="updateTrigger(0)">
-      <Timer
-        :time-left="timeLeft0"
-        :timeLimit=timeLimit[0]
-      />
-    </div>
-    <div @click="updateTrigger(1)">
-      <Timer
-        :time-left="timeLeft1"
-        :timeLimit=timeLimit[1]
-      />
+    <div>검은마법사 패턴 타이머</div>
+    <button @click="phaseSelect(1)"></button>
+    <div id="phase1">
+      <div @click="updateTrigger(0)">
+        <Timer
+          :time-left="timeLeft(0)"
+          :timeLimit=timeLimit[0]
+        />
+      </div>
+      <div @click="updateTrigger(1)">
+        <Timer
+          :time-left="timeLeft(1)"
+          :timeLimit=timeLimit[1]
+        />
+      </div>
+      <div @click="updateTrigger(2)">
+        <Timer
+          :time-left="timeLeft(2)"
+          :timeLimit=timeLimit[2]
+        />
+      </div>
+      <div @click="updateTrigger(3)">
+        <Timer
+          :time-left="timeLeft(3)"
+          :timeLimit=timeLimit[3]
+        />
+      </div>
     </div>
     <button @click="log"></button>
   </div>
@@ -32,31 +48,33 @@ export default {
 
   data() {
     return {
-      timeLimit: [20, 30],
-      timeTrigger: [0, 0],
+      phase: 1,
+      timeLimit: [55, 55, 70, 35],
+      timeTrigger: [0, 0, 0, 0],
       timePassed: 0,
       timerInterval: null,
-      toggle: [0, 0]
+      toggle: [0, 0, 0, 0]
     }
   },
 
-  computed: {
-    timeLeft0() {
-      if (this.toggle[0] = 0) {
-        return this.timeLimit[0]
-      }
-      return this.timeLimit[0] - this.timePassed + this.timeTrigger[0]
-    },
-
-    timeLeft1() {
-      return this.timeLimit[1] - this.timePassed + this.timeTrigger[1]
-    },
+  computed: {    
     
   },
 
   methods: {
+    phaseSelect(n) {
+      this.phase = n
+    },
+
     startTimer() {
       this.timerInterval = setInterval(() => (this.timePassed += 1), 1000);
+    },
+
+    timeLeft(n) {
+      if (this.toggle[n] == 0) {
+        return this.timeLimit[n]
+      }
+      return this.timeLimit[n] - this.timePassed + this.timeTrigger[n]
     },
 
     updateTrigger(n) {
