@@ -1,16 +1,19 @@
 {
   "name": "bosstimer",
+  "private": true,
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.0.4"
+    "sass": "^1.55.0",
+    "vue": "^3.2.37"
   },
   "devDependencies": {
-    "@vue/compiler-sfc": "^3.0.4",
-    "sass": "^1.55.0",
-    "vite": "^1.0.0-rc.13"
+    "@vitejs/plugin-vue": "^3.1.0",
+    "vite": "^3.1.0"
   }
 }
