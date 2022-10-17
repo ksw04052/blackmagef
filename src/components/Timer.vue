@@ -2,25 +2,25 @@
   <div class="base-timer">
     <svg
       class="base-timer__svg"
-      viewBox="0 0 100 100"
+      viewBox="0 0 20 20"
       xmlns="http://www.w3.org/2000/svg"
     >
       <g class="base-timer__circle">
         <circle
           class="base-timer__path-elapsed"
-          cx="50"
-          cy="50"
-          r="45" 
+          cx="10"
+          cy="10"
+          r="9" 
         />
         <path
           :stroke-dasharray="circleDasharray"
           :class="remainingPathColor"
           class="base-timer__path-remaining"
           d="
-            M 50, 50
-            m -45, 0
-            a 45,45 0 1,0 90,0
-            a 45,45 0 1,0 -90,0
+            M 10, 10
+            m -9, 0
+            a 9,9 0 1,0 18,0
+            a 9,9 0 1,0 -18,0
           "
         ></path>
       </g>
@@ -86,7 +86,7 @@ export default {
 
     // Update the dasharray value as time passes, starting with 283
     circleDasharray() {
-      return `${(this.timeFraction * 283).toFixed(0)} 283`;
+      return `${(this.timeFraction * 57).toFixed(0)} 57`;
     },
 		
     timeFraction() {
@@ -131,8 +131,8 @@ export default {
 /* Sets the containers height and width */
 .base-timer {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 60px;
+  height: 60px;
 	
 /* Removes SVG styling that would hide the time label */
   &__circle {
@@ -142,7 +142,7 @@ export default {
 	
 /* The SVG path that displays the timer's progress */
   &__path-elapsed {
-    stroke-width: 7px;
+    stroke-width: 1px;
     stroke:grey;
   }
 
@@ -150,8 +150,8 @@ export default {
     position: absolute;    
     
     /* Size should match the parent container */    
-    width: 300px;
-    height: 300px;
+    width: 60px;
+    height: 60px;
 		
     /* Keep the label aligned to the top */    
     top: 0;
@@ -162,12 +162,12 @@ export default {
     justify-content: center;
 		
     /* Sort of an arbitrary number; adjust to your liking */
-    font-size: 48px;
+    font-size: 15px;
   }
 
   &__path-remaining {
     /* Just as thick as the original ring */
-    stroke-width: 7px;
+    stroke-width: 1px;
 		
     /* Rounds the line endings to create a seamless circle */
     stroke-linecap: round;
