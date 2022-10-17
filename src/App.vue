@@ -12,7 +12,7 @@
     <div id="phase1" v-if="phase == 1">
       <div @click="updateTrigger(0)">
         <div>
-          <img class="pattern" src="\src\assets\감자.gif" alt="potato">
+          <img class="pattern" src="./assets/potato.gif" alt="potato">
         </div>
         <div class="label">
           <label>감자</label>
@@ -24,7 +24,7 @@
       </div>
       <div @click="updateTrigger(1)">
         <div>
-          <img class="pattern" src="\src\assets\감자.gif" alt="potato">
+          <img class="pattern" src="./assets/potato.gif" alt="potato">
         </div>
         <div class="label">
           <label>감자</label>
@@ -36,7 +36,7 @@
       </div>
       <div @click="updateTrigger(2)">
         <div>
-          <img class="pattern" src="\src\assets\1페 권능.gif" alt="potato">
+          <img class="pattern" src="./assets/gim1.gif" alt="potato">
         </div>
         <div class="label">
           <label>권능</label>
@@ -50,7 +50,7 @@
     <div id="phase2" v-if="phase == 2">
       <div @click="updateTrigger(3)">
         <div>
-          <img class="pattern" src="\src\assets\감자.gif" alt="potato">
+          <img class="pattern" src="./assets/potato.gif" alt="potato">
         </div>
         <div class="label">
           <label>감자</label>
@@ -62,7 +62,7 @@
       </div>
       <div @click="updateTrigger(4)">
         <div>
-          <img class="pattern" src="\src\assets\사선.gif" alt="potato">
+          <img class="pattern" src="./assets/dog.gif" alt="potato">
         </div>
         <div class="label">
           <label>사선</label>
@@ -74,7 +74,7 @@
       </div>
       <div @click="updateTrigger(5)">
         <div>
-          <img class="pattern" src="\src\assets\2페 권능.gif" alt="potato">
+          <img class="pattern" src="./assets/gim2.gif" alt="potato">
         </div>
         <div class="label">
           <label>권능</label>
@@ -86,7 +86,7 @@
       </div>
       <div @click="updateTrigger(6)">
         <div>
-          <img class="pattern" src="\src\assets\눈.gif" alt="potato">
+          <img class="pattern" src="./assets/eye.gif" alt="potato">
         </div>
         <div class="label">
           <label>눈</label>
@@ -100,7 +100,7 @@
     <div id="phase3" v-if="phase == 3">
       <div @click="updateTrigger(7)">
         <div>
-          <img class="pattern" src="\src\assets\감자.gif" alt="potato">
+          <img class="pattern" src="./assets/potato.gif" alt="potato">
         </div>
         <div class="label">
           <label>감자</label>
@@ -112,7 +112,7 @@
       </div>
       <div @click="updateTrigger(8)">
         <div>
-          <img class="pattern" src="\src\assets\사선.gif" alt="potato">
+          <img class="pattern" src="./assets/dog.gif" alt="potato">
         </div>
         <div class="label">
           <label>사선</label>
@@ -124,7 +124,7 @@
       </div>
       <div @click="updateTrigger(9)">
         <div>
-          <img class="pattern" src="\src\assets\창조.gif" alt="potato">
+          <img class="pattern" src="./assets/gim3.gif" alt="potato">
         </div>
         <div class="label">
           <label>권능</label>
@@ -138,7 +138,7 @@
     <div id="phase4" v-if="phase == 4">
       <div @click="updateTrigger(10)">
         <div>
-          <img class="pattern" src="\src\assets\4페 권능.gif" alt="potato">
+          <img class="pattern" src="./assets/gim4.gif" alt="potato">
         </div>
         <div class="label">
           <label>권능</label>
