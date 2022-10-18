@@ -3,7 +3,7 @@
     <h2>검은 마법사 패턴 타이머</h2>
     <span>제작자 : 루나/아르마멍</span>
     <br>
-    <span>사용설명 : <a href="https://www.inven.co.kr/board/maple/2304/30696">링크 클릭</a></span>
+    <span>사용설명 : <a href="https://www.inven.co.kr/board/maple/2304/32341">링크 클릭</a></span>
     <br>
     <span>버그/오류제보 : <a href="https://open.kakao.com/me/dgdg">링크 클릭</a></span>
     <br>
