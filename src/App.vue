@@ -389,6 +389,7 @@ export default {
     border-radius: 10px;
     background-color: white;
     text-align: center;
+    color: black;
   }
 
   div.item {
