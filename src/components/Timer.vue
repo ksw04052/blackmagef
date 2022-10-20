@@ -43,15 +43,20 @@ export default {
     timeLimit: {
       type: Number
     },
+    timerNumber: {
+      type: Number
+    },
     alertThreshold: {
       type: Number,
       default: 5
      },
-		 
     warningThreshold: {
       type: Number,
       default: 10
     },
+    autoReset: {
+      type: Boolean
+    }
   },
 
   data() {
@@ -77,7 +82,12 @@ export default {
       }
 
       if (timeLeft < 0) {
-        return "0:00"
+        if (this.autoReset == true) {
+          this.$emit("reset")
+        }
+        else {
+          return "0:00"
+        }
       }
 			
       // The output in MM:SS format

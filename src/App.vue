@@ -1,11 +1,16 @@
 <template>
   <div id="app" class="outer">
+
     <h2>검은 마법사 패턴 타이머</h2>
-    <span>제작자 : 루나/아르마멍</span>
+    <span>제작자 : 루나/아르마멍&코</span>
     <br>
     <span>사용설명 : <a href="https://www.inven.co.kr/board/maple/2304/32341">링크 클릭</a></span>
     <br>
     <span>버그/오류제보 : <a href="https://open.kakao.com/me/dgdg">링크 클릭</a></span>
+    <br>
+    <br>
+    <input type="checkbox" style="margin-left: 10px;" v-model="autoReset">
+    <label for="autoReset" style="margin-left: 3px;">0초 되면 타이머 재시작 (극딜 제외)</label>
     <br>
     <button @click="phaseSelect(1)">1페 (1)</button>
     <button @click="phaseSelect(2)">2페 (2)</button>
@@ -22,6 +27,8 @@
           <Timer
           :time-left="timeLeft(0)"
           :timeLimit=timeLimit[0]
+          :autoReset=autoReset
+          v-on:reset="updateTrigger(0)"
         />
         </div>
       </div>
@@ -34,6 +41,8 @@
           <Timer
             :time-left="timeLeft(1)"
             :timeLimit=timeLimit[1]
+            :autoReset=autoReset
+            v-on:reset="updateTrigger(1)"
           />
         </div>
       </div>
@@ -46,6 +55,8 @@
           <Timer
             :time-left="timeLeft(2)"
             :timeLimit=timeLimit[2]
+            :autoReset=autoReset
+            v-on:reset="updateTrigger(2)"
           />
         </div>
       </div>
@@ -60,6 +71,8 @@
           <Timer
             :time-left="timeLeft(3)"
             :timeLimit=timeLimit[3]
+            :autoReset=autoReset
+            v-on:reset="updateTrigger(3)"
           />
         </div>
       </div>
@@ -72,6 +85,8 @@
           <Timer
             :time-left="timeLeft(4)"
             :timeLimit=timeLimit[4]
+            :autoReset=autoReset
+            v-on:reset="updateTrigger(4)"
           />
         </div>
       </div>
@@ -84,6 +99,8 @@
           <Timer
             :time-left="timeLeft(5)"
             :timeLimit=timeLimit[5]
+            :autoReset=autoReset
+            v-on:reset="updateTrigger(5)"
           />
         </div>
       </div>
@@ -96,6 +113,8 @@
           <Timer
             :time-left="timeLeft(6)"
             :timeLimit=timeLimit[6]
+            :autoReset=autoReset
+            v-on:reset="updateTrigger(6)"
           />
         </div>
       </div>
@@ -110,6 +129,8 @@
           <Timer
             :time-left="timeLeft(7)"
             :timeLimit=timeLimit[7]
+            :autoReset=autoReset
+            v-on:reset="updateTrigger(7)"
           />
         </div>
       </div>
@@ -122,6 +143,8 @@
           <Timer
             :time-left="timeLeft(8)"
             :timeLimit=timeLimit[8]
+            :autoReset=autoReset
+            v-on:reset="updateTrigger(8)"
           />
         </div>
       </div>
@@ -134,6 +157,8 @@
           <Timer
             :time-left="timeLeft(9)"
             :timeLimit=timeLimit[9]
+            :autoReset=autoReset
+            v-on:reset="updateTrigger(9)"
           />
         </div>
       </div>
@@ -148,6 +173,8 @@
           <Timer
             :time-left="timeLeft(10)"
             :timeLimit=timeLimit[10]
+            :autoReset=autoReset
+            v-on:reset="updateTrigger(10)"
           />
         </div>
       </div>
@@ -163,6 +190,7 @@
           <Timer
             :time-left="timeLeft(11)"
             :timeLimit=timeLimit[11]
+            :autoReset=false
           />
         </div>
       </div>
@@ -175,6 +203,7 @@
           <Timer
             :time-left="timeLeft(12)"
             :timeLimit=timeLimit[12]
+            :autoReset=false
           />
         </div>
       </div>
@@ -187,6 +216,7 @@
           <Timer
             :time-left="timeLeft(13)"
             :timeLimit=timeLimit[13]
+            :autoReset=false
           />
         </div>
       </div>
@@ -220,11 +250,13 @@ export default {
 
   data() {
     return {
+      autoReset: false,
       phase: 1,
       timeLimit: [20, 60, 40, 55, 55, 70, 35, 35, 35, 65, 30, 180, 120, 200],
       timeTrigger: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
       timePassed: 0,
       timerInterval: null,
+      timerNumber: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
       // toggle: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     }
   },
